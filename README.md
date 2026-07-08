@@ -1,285 +1,306 @@
+## Community Hero
 
-## ✨ Why Smart Bharat
+Community Hero is a hyperlocal issue reporting and resolution platform built around one principle: neighborhood problems should be easy to report, visible to track, and accountable to resolve.
 
-> India has **1.4 billion citizens** and **800+ government schemes** across 50+ ministries. The average citizen never claims **60% of benefits** they're eligible for — not because they aren't qualified, but because the system is impossible to navigate.
+It turns civic service into a community-first workflow where residents can report local issues quickly, escalate repeated problems, upload evidence, track progress with reference IDs, follow visible resolution status, and support action workflows through payments and records.
 
-**Smart Bharat turns this maze into a conversation.** A citizen speaks their question — in Hindi or English — and Google Gemini 2.5 Flash answers, routes, recommends, and tracks. Digital public infrastructure, reimagined for the *next* 500 million users.
+## Animated Project Summary
 
----
+Community Hero combines a polished, motion-led interface with practical civic workflows so the product feels easy to use in real-world, shared-device settings. The current experience emphasizes clarity, transparency, multilingual access, voice support, and visible status tracking for every issue.
 
-## 🎯 Core Features
+## Problem Statement Alignment
 
-| Feature | What it does | AI Magic |
-| --- | --- | --- |
-| 🗣️ **AI Civic Companion** | Chat about any government service or scheme | Language-mirroring Gemini agent with civic context; **voice input + read-aloud** for low-literacy users |
-| 📮 **Smart Complaint Tracker** | File & track public issues (water, roads, sanitation…) | **AI triage** — auto-generates summary, priority, and routes to the correct department |
-| 🧭 **Personalised Scheme Finder** | Enter your profile → get 4-6 eligible schemes | JSON-mode Gemini with locked schema; only well-known central schemes surfaced |
-| 📋 **Document Guidance** | For any service, get exact document checklist + steps | Structured output: required docs, process, portal, time, tips |
-| 🌐 **Multilingual (EN + हिं)** | One-click toggle across the entire app | Same model, native language — no translation layer, no quality loss |
+### Background
 
----
+Communities frequently face potholes, water leakages, damaged streetlights, waste management concerns, and public infrastructure failures. Reporting these issues is often fragmented, difficult to track, and low in transparency.
 
-## 🎬 Live Demo
+### Challenge
 
-🔗 **[https://citizen-connect-46.preview.emergentagent.com](https://citizen-connect-46.preview.emergentagent.com)**
+Build a platform that enables citizens to identify, report, validate, track, and resolve community issues through collaboration, data, and intelligent automation. The solution should encourage transparency, accountability, and community participation.
 
-Try these in 60 seconds:
-1. **Chat** → tap the mic 🎤 → say *"How do I apply for Aadhaar?"*
-2. **Complaints** → submit a water issue → watch AI assign priority + department in real time
-3. **Language toggle** (top-right) → switch to हिंदी, retry any flow
-4. **Find Schemes** → *Farmer, Maharashtra* → get PM-KISAN, PMFBY, KCC…
+### Evaluation focus
 
----
+The solution should demonstrate how AI can help communities address local challenges more efficiently through improved reporting, verification, tracking, and resolution of issues.
 
-## 🏗️ Architecture
+## How This Project Answers The Challenge
 
+Community Hero already implements the foundation of the challenge in a working product:
+
+- structured issue reporting
+- escalation logging for unresolved problems
+- evidence upload
+- reference-based issue tracking
+- admin-side resolution dashboards
+- voice-guided and multilingual access
+- offline-safe queuing for key flows
+
+It also includes platform hooks that support the next layer of intelligent automation:
+
+- issue-type classification through category-driven flows
+- evidence-aware validation workflows
+- dashboard-ready operational data
+- fraud and risk analysis patterns already used in the payment pipeline
+- audit logging and device heartbeat signals that support trustworthy operations
+
+## Current Product Preview
+
+The current locally running version of the app has been aligned to the hyperlocal problem-solving theme with a resident-first dashboard, issue workflows, and resolution tracking.
+
+## What Residents Can Do
+
+Residents can use Community Hero to:
+
+- report local issues such as potholes, water leakage, broken streetlights, and waste management concerns
+- escalate repeated problems when an issue needs stronger follow-up
+- upload evidence such as issue photos, location proof, and supporting media or records
+- track issue resolution with a reference ID
+- access multilingual UI, voice guidance, voice-assisted field filling, on-screen keyboard and keypad support, high-contrast mode, manual light and dark themes, and idle privacy reset for shared-device environments
+
+## What Resolution Teams Can Do
+
+Authorized staff can use the admin area to:
+
+- view incoming issue reports
+- review escalations
+- inspect attached evidence context
+- update lifecycle statuses
+- track operational activity
+- monitor dashboards and health
+- close resolved or rejected records
+
+## Feature Mapping Against The Problem Statement
+
+### Implemented now
+
+- structured issue reporting
+- hyperlocal issue categories
+- escalation workflow
+- real-time status lookup by reference ID
+- evidence upload workflow
+- impact and operations dashboards
+- voice and accessibility support
+- offline queueing for unstable connectivity
+
+### Partially represented or ready for extension
+
+- AI-powered issue categorization: category-driven reporting is in place and can be upgraded with model-based classification
+- community verification: escalation and evidence workflows are present and can evolve into resident verification loops
+- predictive insights: dashboards, audit data, and issue metadata are available for future trend and hotspot analysis
+- gamification for citizen engagement: not implemented yet, but the user and activity structure is available for a future participation layer
+- geo-location and mapping: not implemented yet in the current frontend, but the reporting flow is ready for map and location capture expansion
+
+## UX Direction
+
+The frontend uses a premium retro neo-brutalist dashboard style so the product feels memorable, visible, and accessible in shared community settings.
+
+Design characteristics include:
+
+- thick borders
+- hard shadows
+- paper-like surfaces
+- pastel contrast system
+- handwritten accent labels
+- bold hierarchy
+- responsive control sidebar
+- polished light and dark themes
+
+Key files:
+
+- [frontend/src/index.css](frontend/src/index.css)
+- [frontend/src/components/Layout.jsx](frontend/src/components/Layout.jsx)
+- [frontend/src/context/LanguageContext.jsx](frontend/src/context/LanguageContext.jsx)
+- [frontend/src/pages/Home.jsx](frontend/src/pages/Home.jsx)
+
+## User Flows
+
+### Resident flow
+
+1. Open the welcome screen.
+2. Select a language.
+3. Log in with OTP or continue in guest mode.
+4. Choose one of the main actions: report issue, escalate issue, upload evidence, support payment, or track issue.
+5. Save the generated reference ID.
+
+### Resolution team flow
+
+1. Open team login.
+2. Sign in using mobile and password.
+3. Verify the OTP challenge.
+4. Review issue reports and escalations.
+5. Update statuses and monitor dashboards.
+
+## Screens In The Current App
+
+### Resident-facing
+
+- `/` welcome screen and community overview
+- `/chat` civic companion chat flow
+- `/services` service discovery flow
+- `/complaints` local issue reporting and escalation flow
+- `/documents` document guidance flow
+
+## Architecture Overview
+
+### Tech Stack
+
+#### Frontend
+
+- React 19
+- React Router DOM 7
+- Tailwind CSS 3
+- Framer Motion
+- Lucide React
+- Axios
+
+#### Backend
+
+- FastAPI
+- MongoDB via Motor
+- Google Gemini integration
+- JWT-style auth patterns and API-ready service endpoints
+
+### Repository Structure
+
+```text
+.
+├── backend/
+│   ├── requirements.txt
+│   └── server.py
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── context/
+│       ├── hooks/
+│       ├── lib/
+│       └── pages/
+├── design_guidelines.json
+├── PITCH_SCRIPT.md
+├── README.md
+├── test_result.md
+└── tests/
 ```
-                  ┌─────────────────────────────────┐
-                  │   React 19 (CRA) + Tailwind      │
-                  │   Cabinet Grotesk · Satoshi      │
-                  │   framer-motion · lucide-react   │
-                  │   Web Speech API (STT + TTS)     │
-                  └────────────────┬─────────────────┘
-                                   │  REACT_APP_BACKEND_URL
-                                   ▼
-                  ┌─────────────────────────────────┐
-                  │   FastAPI (Python 3.11) + Motor  │
-                  │   9 REST endpoints under /api    │
-                  └────┬──────────────────┬──────────┘
-                       │                  │
-             ┌─────────▼───┐      ┌───────▼──────────┐
-             │  MongoDB     │      │  Google Gemini    │
-             │  complaints  │      │  2.5 Flash        │
-             │  collection  │      │  (JSON mode +      │
-             └──────────────┘      │   streaming)      │
-                                   └───────────────────┘
-```
 
-### Design principles
-- **Separation of concerns** — clean backend/frontend split, no shared state hacks.
-- **Structured AI outputs** — every non-chat endpoint uses `response_mime_type=application/json` with a locked schema. No markdown blobs.
-- **Fail gracefully** — complaint submission works even if AI triage fails (rule-based fallback).
-- **Secrets never in repo** — everything env-driven, `.env.example` provided.
-- **Distinctive design** — Cabinet Grotesk + Satoshi + Saffron/Navy/Emerald on Linen. No purple gradient AI slop.
-
----
-
-## 🧪 Tech Stack
-
-| Layer | Tech |
-| --- | --- |
-| **Frontend** | React 19 · React Router 7 · Tailwind CSS 3 · shadcn/ui · framer-motion · lucide-react · axios |
-| **Voice** | Web Speech API — `SpeechRecognition` (STT, `hi-IN`/`en-IN`) + `SpeechSynthesis` (TTS) |
-| **Backend** | FastAPI 0.110 · Motor (async MongoDB) · Pydantic v2 · uvicorn |
-| **AI** | Google Gemini 2.5 Flash via `google-generativeai` (JSON mode + streaming) |
-| **Database** | MongoDB (in-memory OK for demo; complaints persisted) |
-| **Fonts** | Cabinet Grotesk (headings), Satoshi (body), JetBrains Mono (numerals), Noto Sans Devanagari (Hindi) |
-| **Deploy** | Emergent Preview · (portable to Vercel + Railway) |
-
----
-
-## 🚀 Local Setup
+## Local Development
 
 ### Prerequisites
-- Node.js ≥ 18 & Yarn
-- Python ≥ 3.10
-- MongoDB running locally (or a MongoDB Atlas URI)
-- A **Google Gemini API key** from [ai.google.dev](https://ai.google.dev) (free tier is plenty)
 
-### 1. Clone
-```bash
-git clone https://github.com/<your-username>/smart-bharat.git
-cd smart-bharat
-```
+- Node.js 18+
+- npm 9+ or Yarn
+- Python 3.10+
+- MongoDB running locally or a MongoDB Atlas URI
 
-### 2. Backend
+### Backend setup
+
 ```bash
 cd backend
 pip install -r requirements.txt
-
-# Configure env
-cp .env.example .env
-# Edit .env and set:
-#   MONGO_URL="mongodb://localhost:27017"
-#   DB_NAME="smart_bharat"
-#   CORS_ORIGINS="*"
-#   GEMINI_API_KEY="your-key-from-ai.google.dev"
-
-# Run
+# create backend/.env with:
+# MONGO_URL="mongodb://localhost:27017"
+# DB_NAME="community_hero"
+# GEMINI_API_KEY="your-gemini-api-key"
 uvicorn server:app --reload --port 8001
 ```
 
-### 3. Frontend
+### Frontend setup
+
 ```bash
-cd ../frontend
-yarn install
-
-# Configure env
-cp .env.example .env
-# Edit .env:
-#   REACT_APP_BACKEND_URL=http://localhost:8001
-
-yarn start
+cd frontend
+npm install
+# create frontend/.env with:
+# REACT_APP_BACKEND_URL=http://localhost:8001
 ```
 
-Visit **http://localhost:3000** 🎉
+### Run locally in two terminals
 
----
+Terminal 1:
 
-## 🔌 API Reference
-
-All routes are prefixed with `/api`.
-
-### Health
-| Method | Path | Purpose |
-| --- | --- | --- |
-| `GET` | `/health` | Heartbeat |
-
-### AI
-| Method | Path | Body | Returns |
-| --- | --- | --- | --- |
-| `POST` | `/ai/chat` | `{ message, language: "en"\|"hi", history: [] }` | `{ reply, model }` |
-| `POST` | `/ai/chat/stream` | same as above | SSE stream (`text/event-stream`) |
-| `POST` | `/ai/recommend-services` | `{ age, occupation, state, income?, needs?, language }` | `{ services: [{ name, category, eligibility, benefits, how_to_apply, portal }] }` |
-| `POST` | `/ai/document-guidance` | `{ service, language }` | `{ service, required_documents, process_steps, where_to_apply, estimated_time, tips }` |
-
-### Complaints
-| Method | Path | Purpose |
-| --- | --- | --- |
-| `POST` | `/complaints/submit` | Create ticket + AI triage (summary, priority, department) |
-| `GET` | `/complaints/track/{ticket_id}` | Fetch a ticket & timeline |
-| `POST` | `/complaints/update-status` | Advance status |
-| `GET` | `/complaints/all` | List all (admin) |
-| `GET` | `/complaints/stats` | Landing-page counters |
-
-### Example
 ```bash
-curl -X POST http://localhost:8001/api/complaints/submit \
-  -H "Content-Type: application/json" \
-  -d '{
-    "citizen_name":"Ravi Kumar",
-    "contact":"9876543210",
-    "category":"Water Supply",
-    "location":"Sector 21, Noida",
-    "description":"Water pipeline burst since 3 days, 40 houses affected"
-  }'
-```
-Response:
-```json
-{
-  "ticket_id": "SB-A9F2C817",
-  "current_status": "Submitted",
-  "ai_summary": "Water pipeline burst in Sector 21 Noida affecting 40 houses for 3 days.",
-  "ai_priority": "high",
-  "ai_department": "Municipal Water Board",
-  "timeline": [ { "status": "Submitted", "note": "...", "timestamp": "..." } ]
-}
+cd backend
+uvicorn server:app --reload --port 8001
 ```
 
----
+Terminal 2:
 
-## 🎨 Design System
-
-- **Palette:** Linen `#FAF9F6` · Navy `#0B132B` · Saffron `#E05D36` · Emerald `#1C7C54`
-- **Typography:** Cabinet Grotesk (headings), Satoshi (body), JetBrains Mono (numerals)
-- **Layout philosophy:** asymmetric bento grid, generous spacing (`p-8` to `p-16`), `rounded-2xl` cards
-- **Motion:** framer-motion micro-animations on hover, entrance, tab switches — no gratuitous global transitions
-
-Design guidelines locked in [`/app/design_guidelines.json`](./design_guidelines.json).
-
----
-
-## 🔐 Security & Privacy
-
-- ✅ **No secrets in repo** — `.env` is git-ignored; `.env.example` is committed with keys but no values.
-- ✅ **API keys via environment variables only** — never hard-coded, never sent to frontend.
-- ✅ **CORS explicit** via `CORS_ORIGINS` env var.
-- ✅ **No PII in AI prompts** beyond what citizen submits directly.
-- ✅ **No third-party analytics** on citizen data.
-- ✅ **Graceful fallbacks** — AI failures never break the citizen flow (complaints still save).
-
----
-
-## 🧭 Prompt Engineering Strategy
-
-### System prompt (chat)
-`CIVIC_SYSTEM_PROMPT` anchors Gemini as *CivicMate*: concise, jargon-free, **language-mirroring** (responds in whatever language the user writes in), cites official portals, refuses to invent scheme names.
-
-### JSON mode for structured endpoints
-- `response_mime_type: "application/json"` + a strict schema in the prompt
-- `max_output_tokens=4096` to prevent truncation on longer service lists
-- Prompt-locked to *"only well-known central schemes"* to prevent hallucination
-
-### AI triage on complaints
-Every submission triggers a second Gemini call:
+```bash
+cd frontend
+npm start
 ```
-{ summary, priority: "low|medium|high", department }
+
+### Local URLs
+
+- Frontend: http://localhost:3000
+- Backend health: http://localhost:8001/api/health
+
+## API Snapshot
+
+Detailed endpoint notes live in backend/server.py.
+
+Important routes:
+
+- `POST /api/ai/chat`
+- `POST /api/ai/chat/stream`
+- `POST /api/complaints/submit`
+- `GET /api/complaints/track/{ticket_id}`
+- `POST /api/complaints/update-status`
+- `GET /api/complaints/stats`
+
+## Security And Trust Signals
+
+- JWT-protected routes
+- role-based access control
+- OTP-driven auth flows
+- rate limiting
+- password hashing
+- audit logging
+- device heartbeat support
+- consent-driven uploads
+
+## AI And Intelligence Roadmap
+
+To align more directly with the challenge, the strongest next upgrades would be:
+
+- AI-powered issue categorization from text and uploaded evidence
+- geo-tagging and map clustering of issue hotspots
+- community validation loops for duplicate or repeated reports
+- predictive dashboards for likely failure zones and recurring issue types
+- gamified participation rewards for residents who submit strong evidence and valid reports
+
+## Troubleshooting
+
+### Port already in use
+
+```bash
+lsof -nP -iTCP:8001 -sTCP:LISTEN
+lsof -nP -iTCP:3000 -sTCP:LISTEN
 ```
-This is our **differentiator** — most complaint systems dump every ticket into one queue. Ours pre-sorts, ranks, and routes before a human sees it.
 
----
+### Missing backend environment variables
 
-## 🧪 Testing
+```bash
+cd backend
+export MONGO_URL="mongodb://localhost:27017"
+export DB_NAME="community_hero"
+export GEMINI_API_KEY="your-gemini-api-key"
+```
 
-Backend has **100% pass rate** across 9 endpoints (see `/app/test_reports/iteration_1.json`):
-- ✅ `GET /api/health`
-- ✅ `POST /api/ai/chat` (English)
-- ✅ `POST /api/ai/chat` (Hindi Devanagari)
-- ✅ `POST /api/ai/recommend-services` — returns 5 real schemes
-- ✅ `POST /api/ai/document-guidance` — full checklist
-- ✅ `POST /api/complaints/submit` — AI triage populated
-- ✅ `GET /api/complaints/track/{id}` — timeline intact
-- ✅ `POST /api/complaints/update-status` — 4-status transitions
-- ✅ `GET /api/complaints/stats`
+### Backend fails on startup
 
-Frontend flows verified via Playwright + screenshot.
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
----
+### Frontend dependency issue with Rollup optional native package
 
-## 🗺️ Roadmap
+```bash
+rm -rf frontend/node_modules frontend/package-lock.json
+cd frontend
+npm install
+```
 
-- [x] Voice input & TTS (Web Speech API, Hindi + English) ✅
-- [ ] DigiLocker integration for identity verification
-- [ ] eSign for actual form submission
-- [ ] Admin dashboard for municipal officers
-- [ ] Photo upload with complaints (base64 → Mongo GridFS)
-- [ ] Additional languages: Tamil, Telugu, Bengali, Marathi, Kannada
-- [ ] SMS/WhatsApp notifications on ticket status change (Twilio)
-- [ ] Vector-based scheme retrieval (RAG) to cover 800+ schemes exhaustively
+## Additional Docs
 
----
-
-## 💰 Cost at Scale
-
-Gemini 2.5 Flash pricing: ~$0.075 / 1M input tokens · ~$0.30 / 1M output tokens.
-
-- Average civic query: **~300 input + 500 output tokens**
-- **Cost per citizen interaction: ~$0.0002**
-- **100 million queries/year: ~$20,000** — within any state government budget.
-
----
-
-## 🙌 Credits
-
-- **Built for:** DEVENGERS PromptWars 2026 x Global Prompt Challenge (Hack2Skill + Google for Developers)
-- **AI Model:** [Google Gemini 2.5 Flash](https://ai.google.dev)
-- **Fonts:** [Fontshare](https://fontshare.com) (Cabinet Grotesk, Satoshi), Google Fonts (Noto Sans Devanagari, JetBrains Mono)
-- **Icons:** [Lucide](https://lucide.dev)
-- **Hero art:** Pexels & Unsplash (see `design_guidelines.json`)
-
----
-
-## 📄 License
-
-MIT — go build, remix, and ship. Just don't sell it to a scammer.
-
----
-
-<div align="center">
-
-**Made with ❤️ for a more accessible India.**
-
-*Build. Learn. Lead. Impact.*
-
-</div>
- 
+- [PITCH_SCRIPT.md](PITCH_SCRIPT.md)
+- [test_result.md](test_result.md)
+- [design_guidelines.json](design_guidelines.json)

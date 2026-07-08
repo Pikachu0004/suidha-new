@@ -1,0 +1,5 @@
+/* App-level tweaks live in index.css; this file kept for CRA compatibility */
+.App {
+  min-height: 100vh;
+  background: #faf9f6;
+}
